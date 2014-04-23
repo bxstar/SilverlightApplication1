@@ -1,0 +1,54 @@
+﻿<navigation:Page x:Class="SilverlightApplication1.Views.飞机变换" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           xmlns:uc="clr-namespace:SilverlightApplication1.UC"
+           d:DesignWidth="640" d:DesignHeight="480"
+           Title="飞机变换 Page">
+    <navigation:Page.Resources>
+        <Style TargetType="uc:Flight">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Border>
+                            <ContentPresenter>
+                                <ContentPresenter.Content>
+                                    <Polygon
+                    Name ="FlightPolygon"
+                    Stretch="Fill"
+                    Stroke="Blue"
+                    StrokeThickness="1.0"      
+                    Points="169,3 162,9 155,22 152,31 150,40 149,73 149,126 125,142 124,124 120,119 108,119 103,124 104,140 105,154 59,183 9,213 4,218 4,233 6,233 8,229 16,226 57,210 61,217 63,217 64,207 89,198 92,205 94,205 96,195 110,191 
+                    123,189 126,197 128,197 130,189 148,188 149,233 150,256 151,286 154,312 128,328 108,341 109,356 139,349 160,345 166,371 169,374
+                    173,371 179,345 203,351 229,359 230,344 207,327 186,311 189,292 191,232 192,188 212,188 214,197 216,197 218,189 231,189 246,194 247,203 249,203 252,196 279,205 281,213 283,213 285,207 336,225 339,229 341,229 341,215
+                    338,211 277,176 237,152 237,122 234,117 220,117 217,120 217,141 199,131 192,125 191,79 189,39 184,22 177,9 171,4">
+                                        <Polygon.Fill >
+                                            <SolidColorBrush Color="Blue" />
+                                        </Polygon.Fill>
+
+                                    </Polygon>
+                                </ContentPresenter.Content>
+                            </ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </navigation:Page.Resources>
+    
+    
+    <Grid x:Name="LayoutRoot">
+        <uc:Flight x:Name="f1" Visibility="Visible" Width="200" Height="220" HorizontalAlignment="Left"  VerticalAlignment="Top">
+
+                
+            
+        </uc:Flight>
+        <Button Content="放大" Height="23" HorizontalAlignment="Left" Margin="526,309,0,0" Name="btnLarge" VerticalAlignment="Top" Width="75" Click="btnLarge_Click" />
+        <Button Content="缩小" Height="23" HorizontalAlignment="Left" Margin="526,367,0,0" Name="btnSmall" VerticalAlignment="Top" Width="75" Click="btnSmall_Click" />
+        <Button Content="变色" Height="23" HorizontalAlignment="Left" Margin="526,425,0,0" Name="btnChangeColor" VerticalAlignment="Top" Width="75" Click="btnChangeColor_Click" />
+    </Grid>
+</navigation:Page>

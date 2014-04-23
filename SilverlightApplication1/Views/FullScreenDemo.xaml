@@ -1,0 +1,19 @@
+﻿<navigation:Page x:Class="SilverlightApplication1.Views.FullScreenDemo" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           d:DesignWidth="640" d:DesignHeight="480"
+           Title="FullScreenDemo Page">
+    
+    
+    <Canvas Background="#46461F">
+        <Button x:Name="toggleButton" Background="Red" Width="200" Height="80"
+            Canvas.Top="80" Canvas.Left="150" Content="切换全屏模式"
+            FontSize="20" Click="toggleButton_Click"/>
+        <Image x:Name="image" Source="/SilverlightApplication1;component/Image/smile_6.png" 
+           Canvas.Top="100" Canvas.Left="40"></Image>
+    </Canvas>
+</navigation:Page>

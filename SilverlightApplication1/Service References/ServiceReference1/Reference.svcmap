@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8b24cacf-c2f7-48bc-bbf4-23e2bcffb1cb" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:25748/DateService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DateService.xsd" MetadataType="Schema" ID="effb890a-247b-4f1b-8bcf-ffff0abbf125" SourceId="1" SourceUrl="http://localhost:25748/DateService.svc?xsd=xsd1" />
+    <MetadataFile FileName="DateService.wsdl" MetadataType="Wsdl" ID="da095023-065f-4d16-acf4-41814484ce2a" SourceId="1" SourceUrl="http://localhost:25748/DateService.svc?wsdl" />
+    <MetadataFile FileName="DateService.disco" MetadataType="Disco" ID="eadb2b5b-f765-4a82-a4e5-0b9915774d30" SourceId="1" SourceUrl="http://localhost:25748/DateService.svc?disco" />
+    <MetadataFile FileName="DateService1.xsd" MetadataType="Schema" ID="a4afe116-68ef-4a29-8c82-cde2dbf3097d" SourceId="1" SourceUrl="http://localhost:25748/DateService.svc?xsd=xsd2" />
+    <MetadataFile FileName="DateService2.xsd" MetadataType="Schema" ID="5094154b-75c6-4f07-8f98-f9ddfa360a8a" SourceId="1" SourceUrl="http://localhost:25748/DateService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

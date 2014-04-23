@@ -1,0 +1,47 @@
+﻿<navigation:Page x:Class="SilverlightApplication1.Views.数据与通信之WebClient" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           d:DesignWidth="640" d:DesignHeight="480"
+           Title="数据与通信之WebClient Page" Loaded="Page_Loaded">
+
+
+    <Grid Background="#46461F">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Row="0" Grid.Column="0" CornerRadius="15"
+            Width="240" Height="36"
+            Margin="20 0 0 0" HorizontalAlignment="Left">
+            <TextBlock Text="书籍列表" Foreground="White"
+                   HorizontalAlignment="Left" VerticalAlignment="Center"
+                   Margin="20 0 0 0"></TextBlock>
+        </Border>
+        <ListBox x:Name="Books" Grid.Row="1" Margin="40 10 10 10"
+             SelectionChanged="Books_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Name}" Height="32"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Border Grid.Row="2" Grid.Column="0" CornerRadius="15"
+            Width="240" Height="36" Background="Orange"
+            Margin="20 0 0 0" HorizontalAlignment="Left">
+            <TextBlock x:Name="lblPrice" Text="价格：" Foreground="White"
+                   HorizontalAlignment="Left" VerticalAlignment="Center"
+                   Margin="20 0 0 0"></TextBlock>
+        </Border>
+    </Grid>
+
+</navigation:Page>

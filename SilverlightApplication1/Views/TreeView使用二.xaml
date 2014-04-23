@@ -1,0 +1,35 @@
+﻿<navigation:Page x:Class="SilverlightApplication1.Views.TreeView使用二" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           d:DesignWidth="640" d:DesignHeight="480"
+           Title="TreeView使用二 Page" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
+    <UserControl.Resources>
+        <Style x:Key="RedItemStyle" TargetType="sdk:TreeViewItem" >
+            <Setter Property="HeaderTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <CheckBox />
+                            <TextBlock Text="{Binding}" Foreground="Red" FontStyle="Italic" />
+                        </StackPanel>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="IsExpanded" Value="True" />
+        </Style>
+
+    </UserControl.Resources>
+    
+    <Grid x:Name="LayoutRoot">
+        <StackPanel x:Name="Sp1"  Width="500" Height="400" Background="Gray" >
+            <sdk:TreeView x:Name="TreeOfLife"  Width="500" Height="400" >
+
+            </sdk:TreeView>
+        </StackPanel>
+        
+    </Grid>
+</navigation:Page>

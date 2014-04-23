@@ -1,0 +1,30 @@
+﻿<navigation:Page x:Class="SilverlightApplication1.Views.History" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           d:DesignWidth="640" d:DesignHeight="480"
+           Title="History Page" xmlns:my="clr-namespace:Microsoft.Windows.Controls;assembly=Microsoft.Windows.Controls.WatermarkedTextBox">
+
+    <Canvas Background="#46461F">
+        <ToggleButton Content="ToggleButton" FontSize="16" x:Name="togBtn"
+                      Background="Red" IsThreeState="False"
+                      Canvas.Left="100" Canvas.Top="100"
+                      Width="200" Height="80"
+        ></ToggleButton>
+        <my:WatermarkedTextBox Canvas.Left="110" Canvas.Top="220" Height="50" Name="watermarkedTextBox1" Width="300" 
+                               FontSize="18"  
+                               />
+        <ScrollViewer Width="200" Height="100" Canvas.Top="300" Canvas.Left="50"
+                      HorizontalScrollBarVisibility="Auto"
+                      VerticalScrollBarVisibility="Visible">
+            <TextBlock Width="300" TextWrapping="Wrap" Text="这里是一个关于ScrollViewer控件，滚动条的简单测试！"
+                       Foreground="White" FontSize="18"></TextBlock>
+            
+        </ScrollViewer>
+        
+    </Canvas>
+    
+</navigation:Page>

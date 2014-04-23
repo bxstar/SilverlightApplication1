@@ -1,0 +1,23 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BlogServiceSoap" maxBufferSize="2147483647" maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IDateService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://localhost:25748/BlogService.asmx" binding="basicHttpBinding"
+                bindingConfiguration="BlogServiceSoap" contract="BlogService.BlogServiceSoap"
+                name="BlogServiceSoap" />
+            <endpoint address="http://localhost:25748/DateService.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_IDateService" contract="ServiceReference1.IDateService"
+                name="BasicHttpBinding_IDateService" />
+        </client>
+    </system.serviceModel>
+</configuration>

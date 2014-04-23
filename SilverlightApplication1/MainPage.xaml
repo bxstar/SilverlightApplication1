@@ -1,0 +1,149 @@
+﻿<UserControl
+    x:Class="SilverlightApplication1.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation" 
+    xmlns:uriMapper="clr-namespace:System.Windows.Navigation;assembly=System.Windows.Controls.Navigation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="640" d:DesignHeight="480">
+    
+
+    <Grid x:Name="LayoutRoot" Style="{StaticResource LayoutRootGridStyle}">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch"  VerticalAlignment="Top">
+            <Grid x:Name="NavigationGrid" Style="{StaticResource NavigationGridStyle}">
+
+                <Border x:Name="BrandingBorder" Style="{StaticResource BrandingBorderStyle}">
+                    <StackPanel x:Name="BrandingStackPanel" Style="{StaticResource BrandingStackPanelStyle}">
+
+                        <ContentControl Style="{StaticResource LogoIcon}"/>
+                        <TextBlock x:Name="ApplicationNameTextBlock" Style="{StaticResource ApplicationNameStyle}" 
+                                   Text="应用程序名"/>
+
+                    </StackPanel>
+                </Border>
+
+                <Border x:Name="LinksBorder" Style="{StaticResource LinksBorderStyle}">
+                    <StackPanel x:Name="LinksStackPanel" Style="{StaticResource LinksStackPanelStyle}">
+
+                        <HyperlinkButton Style="{StaticResource LinkStyle}" 
+                                         NavigateUri="/Search" TargetName="ContentFrame" Content="主页"/>
+									 
+                        <Rectangle Style="{StaticResource DividerStyle}"/>
+                        <HyperlinkButton Style="{StaticResource LinkStyle}" 
+                                         NavigateUri="/History" TargetName="ContentFrame" Content="历史"/>
+                    
+                        <Rectangle Style="{StaticResource DividerStyle}"/>
+                        <HyperlinkButton Style="{StaticResource LinkStyle}" 
+                                         NavigateUri="/About" TargetName="ContentFrame" Content="关于"/>
+
+                        <!--实现简单的拖放功能-->
+                        <Rectangle Style="{StaticResource DividerStyle}"/>
+                        <HyperlinkButton Style="{StaticResource LinkStyle}" 
+                                         NavigateUri="/DragDemo" TargetName="ContentFrame" Content="简单的拖放功能"/>
+
+                        <!--实现全屏模式-->
+                        <Rectangle Style="{StaticResource DividerStyle}"/>
+                        <HyperlinkButton Style="{StaticResource LinkStyle}" 
+                                         NavigateUri="/FullScreenDemo" TargetName="ContentFrame" Content="全屏模式"/>
+
+                        <!--简单数据绑定-->
+                        <Rectangle Style="{StaticResource DividerStyle}"/>
+                        <HyperlinkButton Style="{StaticResource LinkStyle}" 
+                                         NavigateUri="/SimpleDataBindDemo" TargetName="ContentFrame" Content="简单数据绑定"/>
+                        <!--单向数据绑定-->
+                        <Rectangle Style="{StaticResource DividerStyle}"/>
+                        <HyperlinkButton Style="{StaticResource LinkStyle}" 
+                                         NavigateUri="/OneWayDataBindDemo" TargetName="ContentFrame" Content="单向数据绑定"/>
+                        <!--绑定到列表-->
+                        <Rectangle Style="{StaticResource DividerStyle}"/>
+                        <HyperlinkButton Style="{StaticResource LinkStyle}" 
+                                         NavigateUri="/ListBindDemo" TargetName="ContentFrame" Content="绑定到列表"/>
+
+                        <!--Web服务调用示例-->
+                        <Rectangle Style="{StaticResource DividerStyle}"/>
+                        <HyperlinkButton Style="{StaticResource LinkStyle}" 
+                                         NavigateUri="/AsmxDemo" TargetName="ContentFrame" Content="Web服务调用示例"/>
+                    </StackPanel>
+                </Border>
+
+            </Grid>
+            <Grid x:Name="Custom_NavigationGrid" Background="#FF484848" Height="42" Margin="0" >
+                <Border Style="{StaticResource LinksBorderStyle}">
+                    <StackPanel x:Name="Custom_LinksStackPanel" Style="{StaticResource LinksStackPanelStyle}">
+                        <!--数据与通信之WebClient-->
+                        <HyperlinkButton Style="{StaticResource LinkStyle}" 
+                                         NavigateUri="/数据与通信之WebClient" TargetName="ContentFrame" Content="数据与通信之WebClient"/>
+
+                        <!--数据与通信之WebRequest-->
+                        <Rectangle Style="{StaticResource DividerStyle}"/>
+                        <HyperlinkButton Style="{StaticResource LinkStyle}" 
+                                         NavigateUri="/数据与通信之WebRequest" TargetName="ContentFrame" Content="数据与通信之WebRequest"/>
+                        
+                        <!--TreeView使用一-->
+                        <Rectangle Style="{StaticResource DividerStyle}"/>
+                        <HyperlinkButton Style="{StaticResource LinkStyle}" 
+                                         NavigateUri="/TreeView使用一" TargetName="ContentFrame" Content="TreeView使用一"/>
+
+                        <!--TreeView使用二-->
+                        <Rectangle Style="{StaticResource DividerStyle}"/>
+                        <HyperlinkButton Style="{StaticResource LinkStyle}" 
+                                         NavigateUri="/TreeView使用二" TargetName="ContentFrame" Content="TreeView使用二"/>
+
+                        <!--TreeView使用三-->
+                        <Rectangle Style="{StaticResource DividerStyle}"/>
+                        <HyperlinkButton Style="{StaticResource LinkStyle}" 
+                                         NavigateUri="/TreeView使用三" TargetName="ContentFrame" Content="TreeView使用三"/>
+
+
+                        <!--绑定到带复选框列表-->
+                        <Rectangle Style="{StaticResource DividerStyle}"/>
+                        <HyperlinkButton Style="{StaticResource LinkStyle}" 
+                                         NavigateUri="/绑定到带复选框列表" TargetName="ContentFrame" Content="绑定到带复选框列表"/>
+                        
+                        <!--DataGrid多层-->
+                        <Rectangle Style="{StaticResource DividerStyle}"/>
+                        <HyperlinkButton Style="{StaticResource LinkStyle}" 
+                                         NavigateUri="/DataGrid多层" TargetName="ContentFrame" Content="DataGrid多层"/>
+
+                        <!--DataGrid展开-->
+                        <Rectangle Style="{StaticResource DividerStyle}"/>
+                        <HyperlinkButton Style="{StaticResource LinkStyle}" 
+                                         NavigateUri="/DataGrid展开" TargetName="ContentFrame" Content="DataGrid展开"/>
+
+                        <!--TabControl学习-->
+                        <Rectangle Style="{StaticResource DividerStyle}"/>
+                        <HyperlinkButton Style="{StaticResource LinkStyle}" 
+                                         NavigateUri="/TabControl学习" TargetName="ContentFrame" Content="TabControl学习"/>
+
+                        <!--飞机变换-->
+                        <Rectangle Style="{StaticResource DividerStyle}"/>
+                        <HyperlinkButton Style="{StaticResource LinkStyle}" 
+                                         NavigateUri="/飞机变换" TargetName="ContentFrame" Content="飞机变换"/>
+                        
+                        <!--缓动效果-->
+                        <Rectangle Style="{StaticResource DividerStyle}" />
+                        <HyperlinkButton Style="{StaticResource LinkStyle}" 
+                                         NavigateUri="/缓动效果" TargetName="ContentFrame" Content="缓动效果"/>
+                        
+
+                    </StackPanel>
+                </Border>
+
+            </Grid>
+        </StackPanel>
+
+        <Border x:Name="ContentBorder" Style="{StaticResource ContentBorderStyle}">
+
+            <navigation:Frame x:Name="ContentFrame" Style="{StaticResource ContentFrameStyle}" 
+                              Source="/Search" Navigated="ContentFrame_Navigated" NavigationFailed="ContentFrame_NavigationFailed">
+                <navigation:Frame.UriMapper>
+                    <uriMapper:UriMapper>
+                        <uriMapper:UriMapping Uri="" MappedUri="/Views/Search.xaml"/>
+                        <uriMapper:UriMapping Uri="/{pageName}" MappedUri="/Views/{pageName}.xaml"/>
+                    </uriMapper:UriMapper>
+                </navigation:Frame.UriMapper>
+            </navigation:Frame>
+        </Border>
+    </Grid>
+
+</UserControl>

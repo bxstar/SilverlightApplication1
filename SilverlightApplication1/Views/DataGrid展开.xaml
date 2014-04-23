@@ -1,0 +1,132 @@
+﻿<navigation:Page x:Class="SilverlightApplication1.Views.DataGrid展开" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+            xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+           d:DesignWidth="640" d:DesignHeight="480"
+           Title="DataGrid展开 Page" Loaded="Page_Loaded">
+    
+    <UserControl.Resources>
+        <Style x:Key="DataGridRowStyle1" TargetType="sdk:DataGridRow">
+            <Setter Property="IsTabStop" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="sdk:DataGridRow">
+                        <sdk:DataGridFrozenGrid x:Name="Root">
+                            <sdk:DataGridFrozenGrid.Resources>
+                                <Storyboard x:Key="DetailsVisibleTransition">
+                                    <DoubleAnimation Duration="00:00:0.1" Storyboard.TargetProperty="ContentHeight" Storyboard.TargetName="DetailsPresenter"/>
+                                </Storyboard>
+                            </sdk:DataGridFrozenGrid.Resources>
+                            <sdk:DataGridFrozenGrid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                            </sdk:DataGridFrozenGrid.ColumnDefinitions>
+                            <sdk:DataGridFrozenGrid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </sdk:DataGridFrozenGrid.RowDefinitions>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="NormalAlternatingRow">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BackgroundRectangle"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0" To=".5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BackgroundRectangle"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="NormalSelected">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BackgroundRectangle"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="MouseOverSelected">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BackgroundRectangle"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="UnfocusedSelected">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BackgroundRectangle"/>
+                                            <ColorAnimation Duration="0" To="#FFE1E7EC" Storyboard.TargetProperty="(Fill).Color" Storyboard.TargetName="BackgroundRectangle"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="ValidationStates">
+                                    <VisualState x:Name="Valid"/>
+                                    <VisualState x:Name="Invalid">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="Visibility" Storyboard.TargetName="BackgroundRectangle">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="InvalidVisualElement"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Rectangle x:Name="BackgroundRectangle" Grid.ColumnSpan="2" Fill="#FFBADDE9" Opacity="0" Grid.RowSpan="2"/>
+                            <Rectangle x:Name="InvalidVisualElement" Grid.ColumnSpan="2" Fill="#FFF7D8DB" Opacity="0" Grid.RowSpan="2"/>
+                            <sdk:DataGridRowHeader x:Name="RowHeader" sdk:DataGridFrozenGrid.IsFrozen="True" Grid.RowSpan="3"/>
+                            <sdk:DataGridCellsPresenter x:Name="CellsPresenter" Grid.Column="1" sdk:DataGridFrozenGrid.IsFrozen="True"/>
+                            <sdk:DataGridDetailsPresenter x:Name="DetailsPresenter" Grid.Column="1" Grid.Row="1" Width="0" Height="0"/>
+                            <Grid Grid.Row="1" Grid.Column="1" x:Name="tb" Visibility="Collapsed">
+                                <TextBox  Text="这里加你自己的内容"></TextBox> 
+                            </Grid>
+                            <Rectangle x:Name="BottomGridLine" Grid.Column="1" HorizontalAlignment="Stretch" Height="1" Grid.Row="2"/>
+                        </sdk:DataGridFrozenGrid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+    </UserControl.Resources>
+    
+    
+    <Grid x:Name="LayoutRoot">
+
+
+        <sdk:DataGrid IsReadOnly="True" Name="dataGrid1"  RowDetailsVisibilityMode="VisibleWhenSelected" >
+            <sdk:DataGrid.Columns>
+                <sdk:DataGridTemplateColumn Header="功能按钮" Width="80">
+                    <sdk:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="初始化内容" x:Name="xx" Tag="0" Click="Button_Click"></Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </sdk:DataGridTemplateColumn.CellTemplate>
+                </sdk:DataGridTemplateColumn>
+            </sdk:DataGrid.Columns>
+            <sdk:DataGrid.RowDetailsTemplate>
+                <!-- Begin row details section. -->
+                <DataTemplate>
+                    <Border BorderBrush="Black" BorderThickness="1" Background="Tan">
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <!-- Controls are bound to Task properties. -->
+                                    <TextBlock FontSize="16" Foreground="MidnightBlue" Text="{Binding Name}" Margin="0,0,10,0" VerticalAlignment="Bottom" />
+                                    <TextBlock FontSize="12" Text="Due Date: " VerticalAlignment="Bottom" />
+                                    <TextBlock FontSize="12" Text="    Complete:" VerticalAlignment="Bottom" />
+                                    <CheckBox IsChecked="{Binding Complete, Mode=TwoWay}" VerticalAlignment="Center" />
+                                </StackPanel>
+                                <TextBlock FontSize="12" Text="Notes: " />
+                                <TextBox FontSize="12" Text="{Binding Note, Mode=TwoWay}" Width="420" TextWrapping="Wrap" />
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+                <!-- End row details section. -->
+            </sdk:DataGrid.RowDetailsTemplate>
+        </sdk:DataGrid>
+    </Grid>
+</navigation:Page>
